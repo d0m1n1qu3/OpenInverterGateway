@@ -62,24 +62,15 @@ copies or substantial portions of the Software. -->
             text-align: center;
         }
 
-        .blue {
-            border: solid 1px rgb(95, 166, 202);
+        .yellow {
+            border: solid 1px rgb(202, 189, 95);
             text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
             -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
             -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-            background:rgb(43, 149, 185);
+            background:rgb(185, 178, 43);
         }
 
-        .yellow {
-            border: solid 1px rgb(202, 195, 95);
-            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-            -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-            -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-            background:rgb(185, 185, 43);
-        }
-       
         .red {
             border: solid 1px rgb(202, 95, 95);
             text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
@@ -101,7 +92,7 @@ copies or substantial portions of the Software. -->
         <a href="./uiStatus" class="linkButton">UI Json</a>
         <a href="./metrics" class="linkButton">Metrics</a>
         <a href="./debug" class="linkButton">Log</a>
-        <a onClick="return confirm('Starting config AP will disconnect you from the device. Are you sure?');" href="./startAp" class="linkButton blue">Start Config AP</a>
+        <a onClick="return confirm('Starting config AP will disconnect you from the device. Are you sure?');" href="./startAp" class="linkButton yellow">Start Config AP</a>
         <a onClick="return confirm('This will reboot the Wifi Stick. Are you sure?');" href="./reboot" class="linkButton yellow">Reboot</a>
         <a href="./postCommunicationModbus" class="linkButton red">RW Modbus</a>
     </div>
