@@ -6,6 +6,7 @@
 #include "ShineWifi.h"
 #include <TLog.h>
 #include "Index.h"
+#include "ChartJS.h"
 #include "Growatt.h"
 #include <Preferences.h>
 #include <WiFiManager.h>
@@ -466,7 +467,8 @@ void setup()
     #if ENABLE_MODBUS_COMMUNICATION == 1
     httpServer.on("/postCommunicationModbus", sendPostSite);
     httpServer.on("/postCommunicationModbus_p", HTTP_POST, handlePostData);
-    #endif 
+    #endif
+    httpServer.on("/chart.js", sendChartJS);
     httpServer.on("/", sendMainPage);
     #ifdef ENABLE_WEB_DEBUG
         httpServer.on("/debug", sendDebug);
@@ -632,6 +634,11 @@ void sendDebug(void) {
 void sendMainPage(void)
 {
     httpServer.send(200, "text/html", MAIN_page);
+}
+
+void sendChartJS(void)
+{
+    httpServer.send(200, "text/javascript", chartjs_lib);
 }
 
 void sendPostSite(void)
