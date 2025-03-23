@@ -23,23 +23,22 @@ copies or substantial portions of the Software. -->
             max-width: 800px;
             height: 400px;
             margin: 0 auto;
+            font-family: Arial;
         }
 
         h2 {
-            font-family: Arial;
             font-size: 2.5rem;
             text-align: center;
         }
 
         div {
-            font-family: Arial;
             font-size: 1rem;
             padding: 10px 0px 10px 0px;
         }
 
         .linkButtonBar {
             text-align: center;
-            padding: 10px 0px 40px 0px;
+            padding: 20px 0px 20px 0px;
         }
 
         .linkButton {
@@ -57,7 +56,6 @@ copies or substantial portions of the Software. -->
             text-decoration: none;
             display: inline-block;
             margin: 2px;
-            font-family: Arial;
             font-size: .8rem;
             text-align: center;
         }
