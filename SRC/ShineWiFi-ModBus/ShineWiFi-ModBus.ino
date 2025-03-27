@@ -6,6 +6,7 @@
 #include "ShineWifi.h"
 #include <TLog.h>
 #include "Index.h"
+#include "favicon.h"
 #include "Growatt.h"
 #include <Preferences.h>
 #include <WiFiManager.h>
@@ -464,6 +465,7 @@ void setup()
     httpServer.on("/postCommunicationModbus", sendPostSite);
     httpServer.on("/postCommunicationModbus_p", HTTP_POST, handlePostData);
     #endif 
+    httpServer.on("/favicon.ico", sendFavicon);
     httpServer.on("/", sendMainPage);
     #ifdef ENABLE_WEB_DEBUG
         httpServer.on("/debug", sendDebug);
@@ -629,6 +631,12 @@ void sendDebug(void) {
 void sendMainPage(void)
 {
     httpServer.send(200, "text/html", MAIN_page);
+}
+
+void sendFavicon(void)
+{
+    httpServer.sendHeader("Content-Encoding", "gzip", true);
+    httpServer.send_P(200, "image/x-icon", favicon_ico_gz, favicon_ico_gz_len);
 }
 
 void sendPostSite(void)
